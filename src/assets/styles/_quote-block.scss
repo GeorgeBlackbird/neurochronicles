@@ -1,0 +1,45 @@
+.quote-block {
+  margin: 40px 0;
+  position: relative;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid var(--quote-border-color);
+
+  .quote-text {
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 50px;
+    margin-left: 20px;
+    quotes: "“" "”";
+    font-style: italic;
+
+    &::before {
+      content: open-quote;
+      font-size: 4em;
+      color: var(--quote-mark-color);
+      position: absolute;
+      left: -15px;
+      top: 15px;
+      line-height: 0.5;
+      font-family: var(--font-accent);
+      opacity: 0.8;
+    }
+  }
+
+  .quote-author {
+    display: block;
+    margin-top: 20px;
+    text-align: right;
+    font-family: var(--font-accent);
+    color: var(--accent-color);
+    font-size: 1.2em;
+    letter-spacing: 1px;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}

@@ -1,0 +1,34 @@
+$colors: (
+  header-bg: #6D614F,
+  body-bg: #E8E3D6,
+  accent-color: #556B2F,
+  text-color: #4A4A4A,
+  light-text: #FFFFFF,
+  nav-hover-color: #E8E3D6,
+  btn-hover-bg: #47582C,
+  quote-border-color: #556B2F,
+  quote-mark-color: #6D614F,
+  timeline-section-bg: #fff,
+  card-bg: #fff,
+  shadow-color: rgba(0, 0, 0, 0.1)
+);
+
+$fonts: (
+  primary: ('Montserrat', Arial, sans-serif),
+  accent: ('Molot', Arial, sans-serif)
+);
+
+$container-width: 1400px;
+$container-padding: 20px;
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+  
+  --font-primary: #{map-get($fonts, primary)};
+  --font-accent: #{map-get($fonts, accent)};
+  --container-width: #{$container-width};
+  --container-padding: #{$container-padding};
+  --paragraph-font-size: 1.4375rem;
+}
