@@ -1,6 +1,6 @@
 <template>
   <div class="centered-btn-container">
-    <a :href="link" class="btn">{{ text }}</a>
+    <router-link :to="link" class="btn">{{ text }}</router-link>
   </div>
 </template>
 

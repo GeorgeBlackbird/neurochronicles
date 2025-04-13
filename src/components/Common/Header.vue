@@ -14,8 +14,8 @@
       </router-link>
 
       <nav aria-label="Основная навигация">
-        <a href="/" class="nav-link">Главная</a>
-        <a href="/catalog" class="nav-link">Фильмы</a>
+        <router-link to="/" class="nav-link">Главная</router-link>
+        <router-link to="/catalog" class="nav-link">Фильмы</router-link>
       </nav>
     </div>
   </header>

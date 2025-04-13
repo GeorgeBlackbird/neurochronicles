@@ -1,0 +1,72 @@
+.ai-opinions-container {
+  display: grid;
+  grid-template-columns: 18.75rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-poster-block {
+    position: sticky;
+    top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9375rem;
+
+    @media (max-width: 1024px) {
+      position: static;
+      grid-row: 1;
+    }
+
+    .ai-poster-title {
+      font-family: var(--font-accent);
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 0.625rem;
+    }
+
+    .ai-poster {
+      width: 100%;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+      aspect-ratio: 2/3;
+      object-fit: cover;
+    }
+
+    .ai-poster-description {
+      font-size: 1.0625rem;
+      color: var(--text-color);
+      text-align: center;
+      opacity: 0.8;
+    }
+  }
+
+  .ai-quotes-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    padding-right: 1.25rem;
+
+    .ai-quote {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+
+      .ai-logo {
+        width: 3.125rem;
+        height: 3.125rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        color: var(--accent-color);
+      }
+
+      .ai-quote-content {
+        flex: 1;
+      }
+    }
+  }
+}

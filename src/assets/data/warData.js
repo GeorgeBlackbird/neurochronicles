@@ -26,29 +26,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie1',
+        id: '1941-1',
         title: 'Сердца четырех',
-        poster: moviePosters['1941-1'],
-        link: '/films/movie1'
+        poster: moviePosters['1941-1']
       },
       {
-        id: 'movie2',
+        id: '1941-2',
         title: 'Свинарка и пастух',
-        poster: moviePosters['1941-2'],
-        link: '/films/movie1'
+        poster: moviePosters['1941-2']
       },
       {
-        id: 'movie3',
+        id: '1941-3',
         title: 'Конек-Горбунок',
-        poster: moviePosters['1941-3'],
-        link: '/films/movie1'
+        poster: moviePosters['1941-3']
       },
       {
-        id: 'movie4',
+        id: '1941-4',
         title: 'Мечта',
-        poster: moviePosters['1941-4'],
-        link: '/films/movie1'
-      },
+        poster: moviePosters['1941-4']
+      }
     ]
   },
   {
@@ -76,29 +72,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie5',
+        id: '1942-1',
         title: 'Разгром немецких войск под Москвой',
-        poster: moviePosters['1942-1'],
-        link: '/films/movie1'
+        poster: moviePosters['1942-1']
       },
       {
-        id: 'movie6',
+        id: '1942-2',
         title: 'Машенька',
-        poster: moviePosters['1942-2'],
-        link: '/films/movie1'
+        poster: moviePosters['1942-2']
       },
       {
-        id: 'movie7',
+        id: '1942-3',
         title: 'Парень из нашего города',
-        poster: moviePosters['1942-3'],
-        link: '/films/movie1'
+        poster: moviePosters['1942-3']
       },
       {
-        id: 'movie8',
+        id: '1942-4',
         title: 'Актриса',
-        poster: moviePosters['1942-4'],
-        link: '/films/movie1'
-      },
+        poster: moviePosters['1942-4']
+      }
     ]
   },
   {

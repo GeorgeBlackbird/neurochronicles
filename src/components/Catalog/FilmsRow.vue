@@ -1,28 +1,34 @@
 <template>
   <section class="films-row" :aria-label="'Фильмы ' + year + ' года'">
-    <a 
+    <router-link
       v-for="film in films"
       :key="film.id"
-      :href="film.link"
+      :to="{ name: 'Movie Page', params: { id: film.id } }"
       class="film-card"
     >
-      <img :src="film.poster" class="movie-poster" :alt="'Постер фильма ' + film.title">
+      <img
+        :src="film.poster"
+        class="movie-poster"
+        :alt="'Постер фильма ' + film.title"
+      />
       <div class="movie-info">
         <h3 class="movie-title">{{ film.title }}</h3>
       </div>
-    </a>
+    </router-link>
   </section>
 </template>
 
 <script setup>
+import { RouterLink } from "vue-router";
+
 defineProps({
   films: {
     type: Array,
-    required: true
+    required: true,
   },
   year: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 </script>

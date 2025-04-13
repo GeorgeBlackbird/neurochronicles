@@ -59,9 +59,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Section from "../components/Section.vue";
-import QuoteBlock from "../components/QuoteBlock.vue";
-import Button from "../components/Button.vue";
+import Section from "../components/Common/Section.vue";
+import QuoteBlock from "../components/Home/QuoteBlock.vue";
+import Button from "../components/Home/Button.vue";
 import image1 from "../assets/images/index/1.png";
 import image2 from "../assets/images/index/2.png";
 

@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import Preloader from './components/Preloader.vue';
+import Header from './components/Common/Header.vue';
+import Footer from './components/Common/Footer.vue';
+import Preloader from './components/Common/Preloader.vue';
 
 const isLoading = ref(true);
 const router = useRouter();
