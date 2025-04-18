@@ -12,7 +12,7 @@
 @use './sections/films-row';
 @use './base/animations';
 @use './pages/catalog';
-@use './pages/movie';
+@use './views/movie';
 @use './sections/ai-opinions';
 @use './sections/movie-gallery';
 @use './sections/movie-header';
@@ -20,3 +20,12 @@
 @use './sections/movie-poster-description';
 @use './sections/movie-tabs';
 @use './sections/movie-modal';
+
+// Стили для скрытия контента во время загрузки
+body.content-hidden {
+  main, header, footer {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}

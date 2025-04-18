@@ -1,0 +1,39 @@
+.home-main {
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
+.section-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: var(--primary-dark);
+  }
+} 

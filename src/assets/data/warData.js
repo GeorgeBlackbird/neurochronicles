@@ -1,4 +1,5 @@
-import { eventImages, moviePosters } from './images.js';
+import { eventImages } from './events/images.js';
+import { moviePosters } from './movies/posters.js';
 
 export const yearsData = [
   {
@@ -118,29 +119,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie9',
+        id: '1943-1',
         title: 'Два бойца',
-        poster: moviePosters['1943-1'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-1']
       },
       {
-        id: 'movie10',
+        id: '1943-2',
         title: 'Жди меня',
-        poster: moviePosters['1943-2'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-2']
       },
       {
-        id: 'movie11',
+        id: '1943-3',
         title: 'Радуга',
-        poster: moviePosters['1943-3'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-3']
       },
       {
-        id: 'movie12',
-        title: 'Краденое солнце',
-        poster: moviePosters['1943-4'],
-        link: '/films/movie1'
-      },
+        id: '1943-4',
+        title: 'Она защищает Родину',
+        poster: moviePosters['1943-4']
+      }
     ]
   },
   {

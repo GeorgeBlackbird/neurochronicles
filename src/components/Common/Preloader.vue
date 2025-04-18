@@ -4,28 +4,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Preloader",
-  data() {
-    return {
-      isLoading: true,
-    };
-  },
-  mounted() {
-    document.body.classList.add("preloader-active");
+<script setup>
+import { onMounted, onUnmounted } from "vue";
 
-    window.addEventListener("load", this.hide);
-    setTimeout(this.hide, 3000); // Фолбэк на случай ошибки
+const props = defineProps({
+  isLoading: {
+    type: Boolean,
+    required: true,
   },
-  methods: {
-    hide() {
-      this.isLoading = false;
-      document.body.classList.remove("preloader-active");
-    },
-  },
-  beforeUnmount() {
-    document.body.classList.remove("preloader-active");
-  },
-};
+});
+
+onMounted(() => {
+  document.body.classList.add("preloader-active");
+});
+
+onUnmounted(() => {
+  document.body.classList.remove("preloader-active");
+});
 </script>

@@ -1,8 +1,4 @@
-import { moviePosters } from './images.js';
-import { movieImages } from './movieImages.js';
-import { movieTrailers } from './videoAssets.js';
-import { trailerPreviews } from './trailerPreviews.js';
-import { aiPosters } from './aiPosters.js';
+import { moviePosters, actorPhotos, movieTrailers, aiPosters, movieFrames } from './index';
 
 export const moviesData = [
   {
@@ -28,22 +24,27 @@ export const moviesData = [
       {
         name: 'Валентина Серова',
         role: 'Галя',
-        photo: movieImages.actors['1941-1-1']
+        photo: actorPhotos['1941-1-1']
       },
       {
         name: 'Людмила Целиковская',
         role: 'Шура',
-        photo: movieImages.actors['1941-1-2']
+        photo: actorPhotos['1941-1-2']
       },
       {
         name: 'Евгений Самойлов',
         role: 'Пётр Никитич',
-        photo: movieImages.actors['1941-1-3']
+        photo: actorPhotos['1941-1-3']
       },
       {
         name: 'Павел Шпрингфельд',
         role: 'Глеб Заварцев',
-        photo: movieImages.actors['1941-1-4']
+        photo: actorPhotos['1941-1-4']
+      },
+      {
+        name: 'Любовь Дмитриевская',
+        role: 'Мать сестёр',
+        photo: actorPhotos['1941-1-5']
       }
     ],
     crew: {
@@ -59,23 +60,22 @@ export const moviesData = [
     releaseDate: '9 декабря 1944 года',
     premiere: 'Москва',
     trailer: movieTrailers['1941-1'],
-    trailerThumbnail: trailerPreviews['1941-1'],
     frames: [
       {
-        image: movieImages.frames['1941-1-1'],
-        caption: 'Кадр из фильма 1'
+        image: movieFrames['1941-1-1'],
+        caption: 'Кадр из фильма "Сердца четырех"'
       },
       {
-        image: movieImages.frames['1941-1-2'],
-        caption: 'Кадр из фильма 2'
+        image: movieFrames['1941-1-2'],
+        caption: 'Кадр из фильма "Сердца четырех"'
       },
       {
-        image: movieImages.frames['1941-1-3'],
-        caption: 'Кадр из фильма 3'
+        image: movieFrames['1941-1-3'],
+        caption: 'Кадр из фильма "Сердца четырех"'
       },
       {
-        image: movieImages.frames['1941-1-4'],
-        caption: 'Кадр из фильма 4'
+        image: movieFrames['1941-1-4'],
+        caption: 'Кадр из фильма "Сердца четырех"'
       }
     ],
     aiPoster: aiPosters['1941-1'],
@@ -101,6 +101,7 @@ export const moviesData = [
         author: 'Gemini 2.5 Pro'
       }
     ]
-  }
+  },
+
   // Здесь будут добавлены данные о других фильмах
 ]; 
