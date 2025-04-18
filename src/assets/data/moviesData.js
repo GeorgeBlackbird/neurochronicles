@@ -361,8 +361,8 @@ export const moviesData = [
         photo: actorPhotos["1941-4-2"],
       },
       {
-        name: "Фаина Раневская",
-        role: "Роза Скороход",
+        name: "Виктор Щеглов",
+        role: "Томаш Крутцкий",
         photo: actorPhotos["1941-4-3"],
       },
       {
@@ -371,8 +371,8 @@ export const moviesData = [
         photo: actorPhotos["1941-4-4"],
       },
       {
-        name: "",
-        role: "",
+        name: "Аркадий Кисляков",
+        role: "Лазарь Скороход",
         photo: actorPhotos["1941-4-5"],
       },
       {
