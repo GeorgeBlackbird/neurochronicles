@@ -1,4 +1,5 @@
-import { eventImages, moviePosters } from './images.js';
+import { eventImages } from './events/images.js';
+import { moviePosters } from './movies/posters.js';
 
 export const yearsData = [
   {
@@ -118,29 +119,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie9',
+        id: '1943-1',
         title: 'Два бойца',
-        poster: moviePosters['1943-1'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-1']
       },
       {
-        id: 'movie10',
+        id: '1943-2',
         title: 'Жди меня',
-        poster: moviePosters['1943-2'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-2']
       },
       {
-        id: 'movie11',
+        id: '1943-3',
         title: 'Радуга',
-        poster: moviePosters['1943-3'],
-        link: '/films/movie1'
+        poster: moviePosters['1943-3']
       },
       {
-        id: 'movie12',
-        title: 'Краденое солнце',
-        poster: moviePosters['1943-4'],
-        link: '/films/movie1'
-      },
+        id: '1943-4',
+        title: 'Она защищает Родину',
+        poster: moviePosters['1943-4']
+      }
     ]
   },
   {
@@ -168,25 +165,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie13',
+        id: '1944-1',
         title: 'Иван Грозный',
         poster: moviePosters['1944-1'],
         link: '/films/movie1'
       },
       {
-        id: 'movie14',
+        id: '1944-2',
         title: 'Свадьба',
         poster: moviePosters['1944-2'],
         link: '/films/movie1'
       },
       {
-        id: 'movie15',
+        id: '1944-3',
         title: 'Жила-была девочка',
         poster: moviePosters['1944-3'],
         link: '/films/movie1'
       },
       {
-        id: 'movie16',
+        id: '1944-4',
         title: 'В шесть часов вечера после войны',
         poster: moviePosters['1944-4'],
         link: '/films/movie1'
@@ -218,25 +215,25 @@ export const yearsData = [
 
     films: [
       {
-        id: 'movie17',
+        id: '1945-1',
         title: 'Небесный тихоход',
         poster: moviePosters['1945-1'],
         link: '/films/movie1'
       },
       {
-        id: 'movie18',
+        id: '1945-2',
         title: 'Пятнадцатилетний капитан',
         poster: moviePosters['1945-2'],
         link: '/films/movie1'
       },
       {
-        id: 'movie19',
+        id: '1945-3',
         title: 'Иван Грозный. Сказ второй: Боярский заговор',
         poster: moviePosters['1945-3'],
         link: '/films/movie1'
       },
       {
-        id: 'movie20',
+        id: '1945-4',
         title: 'Теремок',
         poster: moviePosters['1945-4'],
         link: '/films/movie1'

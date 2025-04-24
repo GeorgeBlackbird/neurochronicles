@@ -109,19 +109,18 @@
                   <div class="play-icon">▶</div>
                   <span class="gallery-caption">Трейлер фильма</span>
                 </div>
-                <div class="gallery-thumbs">
-                  <div
-                    v-for="(frame, index) in movie.frames"
-                    :key="index"
-                    class="gallery-item"
-                    @click="openImageModal(frame)"
-                  >
-                    <img
-                      :src="frame.image"
-                      :alt="frame.caption"
-                      class="gallery-thumbnail"
-                    />
-                  </div>
+                <div
+                  v-for="(frame, index) in movie.frames"
+                  :key="index"
+                  class="gallery-item"
+                  :class="{ 'gallery-item-right': index < 2 }"
+                  @click="openImageModal(frame)"
+                >
+                  <img
+                    :src="frame.image"
+                    :alt="frame.caption"
+                    class="gallery-thumbnail"
+                  />
                 </div>
               </div>
             </div>
@@ -272,11 +271,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { moviesData } from "@/assets/data/moviesData.js";
 import { yearsData } from "@/assets/data/warData.js";
-import { moviePosters } from "@/assets/data/images.js";
+import { moviePosters } from "@/assets/data/movies/posters.js";
+import { movieTrailers } from "@/assets/data/movies/trailers.js";
+import { actorPhotos } from "@/assets/data/movies/actors.js";
 import AILogos from "@/components/AILogos.vue";
 
 const route = useRoute();
@@ -294,23 +295,27 @@ const tabs = [
   { id: "opinions", title: "МНЕНИЯ" },
 ];
 
-// Обработчик клавиатуры
-const handleKeyDown = (event) => {
-  if (event.key === "Escape") {
-    closeModals();
-  } else if (showImageModal.value || showVideoModal.value) {
-    if (event.key === "ArrowLeft") {
-      navigateMedia("prev");
-    } else if (event.key === "ArrowRight") {
-      navigateMedia("next");
-    }
-  }
-};
+// Добавляем наблюдатель за изменением параметра маршрута
+watch(
+  () => route.params.id,
+  (newId) => {
+    // Сбрасываем все состояния
+    movie.value = null;
+    activeTab.value = "info";
+    showImageModal.value = false;
+    showVideoModal.value = false;
+    currentImage.value = "";
+    currentImageCaption.value = "";
+    currentIndex.value = -1;
 
-onMounted(() => {
-  window.addEventListener("keydown", handleKeyDown);
-  // Загрузка данных о фильме
-  const movieId = route.params.id;
+    // Загружаем данные для нового фильма
+    loadMovieData(newId);
+  },
+  { immediate: true }
+);
+
+// Выносим логику загрузки данных в отдельную функцию
+function loadMovieData(movieId) {
   console.log("Searching for movie with ID:", movieId);
 
   const movieData = moviesData.find((m) => m.id === movieId);
@@ -357,6 +362,23 @@ onMounted(() => {
   } else {
     movie.value = movieData;
   }
+}
+
+// Обработчик клавиатуры
+const handleKeyDown = (event) => {
+  if (event.key === "Escape") {
+    closeModals();
+  } else if (showImageModal.value || showVideoModal.value) {
+    if (event.key === "ArrowLeft") {
+      navigateMedia("prev");
+    } else if (event.key === "ArrowRight") {
+      navigateMedia("next");
+    }
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyDown);
 });
 
 onUnmounted(() => {
@@ -428,7 +450,6 @@ function openVideoModal() {
   console.log("Opening video modal");
   const allMedia = [
     { type: "video", src: movie.value.trailer, caption: "Трейлер фильма" },
-    ...movie.value.frames.map((f) => ({ type: "image", ...f })),
   ];
   currentIndex.value = 0;
   showVideoModal.value = true;
@@ -691,5 +712,117 @@ function closeModals() {
 .modal-close svg {
   width: 24px;
   height: 24px;
+}
+
+.movie-gallery {
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item-main {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  aspect-ratio: 16/9;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--bg-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .play-icon {
+    opacity: 1;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    font-size: 0.9rem;
+  }
+}
+
+.gallery-item {
+  aspect-ratio: 16/9;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--bg-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Для первых двух кадров (справа от трейлера) */
+.gallery-item:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.gallery-item:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.gallery-item:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+/* Остальные кадры (под трейлером) */
+.gallery-item:nth-child(n + 6) {
+  grid-column: auto;
+  grid-row: auto;
 }
 </style>

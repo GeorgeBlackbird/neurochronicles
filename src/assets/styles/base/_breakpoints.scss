@@ -1,0 +1,80 @@
+// Брейкпоинты
+$breakpoints: (
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// Миксин для медиа-запросов
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// Миксин для контейнера
+@mixin container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  
+  @include respond-to('xl') {
+    max-width: 1140px;
+  }
+  
+  @include respond-to('lg') {
+    max-width: 960px;
+  }
+  
+  @include respond-to('md') {
+    max-width: 720px;
+  }
+  
+  @include respond-to('sm') {
+    max-width: 540px;
+  }
+  
+  @include respond-to('xs') {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+// Миксин для скрытия элементов на определенных брейкпоинтах
+@mixin hide-on($breakpoint) {
+  @include respond-to($breakpoint) {
+    display: none !important;
+  }
+}
+
+// Миксин для показа элементов только на определенных брейкпоинтах
+@mixin show-on($breakpoint) {
+  display: none;
+  
+  @include respond-to($breakpoint) {
+    display: block !important;
+  }
+}
+
+// Миксин для адаптивного шрифта
+@mixin responsive-font($min-size, $max-size) {
+  font-size: clamp($min-size, calc($min-size + ($max-size - $min-size) * ((100vw - 320px) / (1400 - 320))), $max-size);
+}
+
+// Миксин для адаптивных отступов
+@mixin responsive-padding($min-padding, $max-padding) {
+  padding: clamp($min-padding, calc($min-padding + ($max-padding - $min-padding) * ((100vw - 320px) / (1400 - 320))), $max-padding);
+}
+
+// Миксин для адаптивных margin
+@mixin responsive-margin($min-margin, $max-margin) {
+  margin: clamp($min-margin, calc($min-margin + ($max-margin - $min-margin) * ((100vw - 320px) / (1400 - 320))), $max-margin);
+} 
