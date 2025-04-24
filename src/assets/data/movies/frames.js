@@ -40,6 +40,24 @@ import frame1943_1_3 from "../../images/movieFrames/1943-1-3.webp";
 import frame1943_1_4 from "../../images/movieFrames/1943-1-4.webp";
 import frame1941_2_3 from "../../images/movieFrames/1941-2-3.webp";
 import frame1941_2_4 from "../../images/movieFrames/1941-2-4.webp";
+import frame1942_1_2 from "../../images/movieFrames/frame1942-1-2.jpg";
+import frame1942_1_3 from "../../images/movieFrames/frame1942-1-3.jpg";
+import frame1942_2_1 from "../../images/movieFrames/1942-2-1.jpg";
+import frame1942_2_2 from "../../images/movieFrames/1942-2-2.jpg";
+import frame1942_2_3 from "../../images/movieFrames/1942-2-3.jpg";
+import frame1942_2_4 from "../../images/movieFrames/1942-2-4.jpg";
+import frame1943_2_1 from "../../images/movieFrames/1943-2-1.jpg";
+import frame1943_2_2 from "../../images/movieFrames/1943-2-2.jpg";
+import frame1943_2_3 from "../../images/movieFrames/1943-2-3.jpg";
+import frame1943_2_4 from "../../images/movieFrames/1943-2-4.jpg";
+import frame1943_3_1 from "../../images/movieFrames/1943-3-1.webp";
+import frame1943_3_2 from "../../images/movieFrames/1943-3-2.webp";
+import frame1943_3_3 from "../../images/movieFrames/1943-3-3.webp";
+import frame1943_3_4 from "../../images/movieFrames/1943-3-4.webp";
+import frame1943_4_1 from "../../images/movieFrames/1943-4-1.webp";
+import frame1943_4_2 from "../../images/movieFrames/1943-4-2.jpg";
+import frame1943_4_3 from "../../images/movieFrames/1943-4-3.jpg";
+import frame1943_4_4 from "../../images/movieFrames/1943-4-4.jpg";
 
 export const movieFrames = {
   "1941-1-1": frame1941_1_1,
@@ -62,6 +80,12 @@ export const movieFrames = {
   "1941-3-10": frame1941_3_10,
   "1941-4-1": frame1941_4_1,
   "1942-1-1": frame1942_1_1,
+  "1942-1-2": frame1942_1_2,
+  "1942-1-3": frame1942_1_3,
+  "1942-2-1": frame1942_2_1,
+  "1942-2-2": frame1942_2_2,
+  "1942-2-3": frame1942_2_3,
+  "1942-2-4": frame1942_2_4,
   "1942-3-1": frame1942_3_1,
   "1942-3-2": frame1942_3_2,
   "1942-3-3": frame1942_3_3,
@@ -83,4 +107,16 @@ export const movieFrames = {
   "1943-1-2": frame1943_1_2,
   "1943-1-3": frame1943_1_3,
   "1943-1-4": frame1943_1_4,
+  "1943-2-1": frame1943_2_1,
+  "1943-2-2": frame1943_2_2,
+  "1943-2-3": frame1943_2_3,
+  "1943-2-4": frame1943_2_4,
+  "1943-3-1": frame1943_3_1,
+  "1943-3-2": frame1943_3_2,
+  "1943-3-3": frame1943_3_3,
+  "1943-3-4": frame1943_3_4,
+  "1943-4-1": frame1943_4_1,
+  "1943-4-2": frame1943_4_2,
+  "1943-4-3": frame1943_4_3,
+  "1943-4-4": frame1943_4_4,
 };
