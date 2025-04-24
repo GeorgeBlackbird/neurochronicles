@@ -50,10 +50,19 @@ import actor1943_3_3 from "../../images/actors/1943-3-3.jpg";
 import actor1943_3_4 from "../../images/actors/1943-3-4.jpg";
 import actor1943_4_1 from "../../images/actors/1943-4-1.jpg";
 import actor1943_4_2 from "../../images/actors/1943-4-2.jpg";
+
 import actor1944_1_1 from "../../images/actors/1944-1-1.jpg";
 import actor1944_1_2 from "../../images/actors/1944-1-2.jpg";
 import actor1944_1_3 from "../../images/actors/1944-1-3.jpg";
 import actor1944_1_4 from "../../images/actors/1944-1-4.jpg";
+import actor1944_2_1 from "../../images/actors/1944-2-1.jpg";
+import actor1944_2_2 from "../../images/actors/1944-2-2.jpg";
+import actor1944_2_3 from "../../images/actors/1944-2-3.jpg";
+
+import actor1944_4_1 from "../../images/actors/1944-4-1.jpg";
+import actor1944_4_2 from "../../images/actors/1944-4-2.jpg";
+import actor1944_4_3 from "../../images/actors/1944-4-3.jpg";
+import actor1944_4_4 from "../../images/actors/1944-4-4.jpg";
 
 export const actorPhotos = {
   "1941-1-1": actor1941_1_1,
@@ -111,4 +120,12 @@ export const actorPhotos = {
   "1944-1-2": actor1944_1_2,
   "1944-1-3": actor1944_1_3,
   "1944-1-4": actor1944_1_4,
+  "1944-2-1": actor1944_2_1,
+  "1944-2-2": actor1944_2_2,
+  "1944-2-3": actor1944_2_3,
+  
+  "1944-4-1": actor1944_4_1,
+  "1944-4-2": actor1944_4_2,
+  "1944-4-3": actor1944_4_3,
+  "1944-4-4": actor1944_4_4,
 };
