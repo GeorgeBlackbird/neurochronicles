@@ -1,184 +1,65 @@
-# 🎬 Neurochronicles | Нейрохроники Войны
+# Neurochronicles
 
-**Neurochronicles** — интерактивный веб-сайт о советских кинолентах периода Великой Отечественной войны (1941—1945), освещённых и проанализированных современными нейросетями.
+A Russian-language website about Soviet films from 1941 to 1945, with a historical timeline, film pages and AI-generated posters and commentary. Built with Vue, Vue Router, Vite and SCSS.
 
----
+This was my first web project. I made it for a small college competition marking 9 May. It didn't win, but I am still proud of it. Looking back, there are parts I would build differently. I keep this version as a record of where I started.
 
-## 📝 Оглавление
+## What is in the site
 
-- [🎬 Neurochronicles | Нейрохроники Войны](#-neurochronicles--нейрохроники-войны)
-  - [📝 Оглавление](#-оглавление)
-  - [🔍 Обзор проекта](#-обзор-проекта)
-  - [✨ Основные возможности](#-основные-возможности)
-  - [🛠️ Технологический стек](#️-технологический-стек)
-  - [📂 Структура проекта](#-структура-проекта)
-  - [⚙️ Установка и запуск](#️-установка-и-запуск)
-  - [🚀 Сборка и деплой](#-сборка-и-деплой)
-  - [🔧 Конфигурация и кастомизация](#-конфигурация-и-кастомизация)
-  - [🤝 Как внести вклад](#-как-внести-вклад)
-  - [📝 Лицензия](#-лицензия)
-  - [📬 Контакты](#-контакты)
+- A catalogue organised by year, alongside wartime events.
+- Individual film pages with descriptions, cast and crew information.
+- Galleries with film stills and video, opened in a media viewer.
+- Alternative posters and commentary attributed to different AI models.
 
----
+Film information, event descriptions and the AI-related content are stored in local data modules. The site does not send requests to an AI service to analyse a film when you open it.
 
-## 🔍 Обзор проекта
+## Run locally
 
-В основе **Нейрохроник Войны** лежит идея показать, как современные AI-технологии могут обогащать наше понимание исторического кино. Проект:
-* Собирает данные о советских фильмах 1941—1945 гг.
-* Иллюстрирует ключевые события войны через хронологию и кадры фронтовых хроник
-* Показывает альтернативные постеры и AI-отзывы о художественных и технических особенностях фильмов
-* Предоставляет интерактивный интерфейс для изучения и сравнения классических кинолент
-**Цель:** вдохновить интерес к историческому наследию и продемонстрировать возможности нейросетей в культурном контексте.
-
----
-
-## ✨ Основные возможности
-
-1. **Главная страница** 🏠
-  * **Интро-секции** с короткими описаниями целей и миссии проекта
-  * **Уникальный дизайн**, сочетающий строгость и теплоту
-2. **Хронология войны** ⏳
-  * **Интерактивная шкала** с событиями (битвы, бои, премьеры фильмов)
-  * **Связь с каталогом**: клик по карточке фильма открывает её страницу
-  * **Карточки фильмов** с обложкой, кратким описанием и ссылкой на детальную страницу
-3. **Страница фильма** 🎬
-  * **Основная информация**: жанр, возрастной рейтинг, год, длительность
-  * **Исторический контекст**: описание реальных событий, связанных с сюжетом
-  * **Галерея**: трейлер, скриншоты, модальные окна с навигацией ←/→
-  * **AI-анализ**:
-    - **Альтернативный постер**, сгенерированный нейросетью
-    - **AI-цитаты** от ChatGPT-4, DeepSeek-R1, Grok 3, Qwen2.5-Max, Gemini 2.5 Pro
-
----
-
-## 🛠️ Технологический стек
-
-* **Vue 3 + Vite** — быстрая сборка и HMR
-* **Vue Router** — маршрутизация между страницами
-* **Pinia** — управление состоянием приложения (готов к расширению)
-* **SCSS** — модульная гибкая стилизация
-* **ESLint + Prettier** — автоматическое форматирование и статических анализ кода
-* **gh-pages** — деплой на GitHub Pages
-
-> Для разработки также рекомендовано установить [Node.js](https://nodejs.org/en) версии >= 16 и [npm](https://www.npmjs.com/).
-
----
-
-## 📂 Структура проекта
-
-```
-neurochronicles/
-├─ .vite/            # Кэш Vite
-├─ public/           # Статичные ресурсы
-├─ src/
-│  ├─ assets/
-│  │  ├─ data/       # JSON-модули: warData.js, moviesData.js
-│  │  ├─ images/     # Постеры, скриншоты, иконки
-│  │  ├─ styles/     # Базовые SCSS и переменные
-│  ├─ components/    # Переиспользуемые UI-компоненты
-│  ├─ router/        # Определение маршрутов
-│  ├─ views/         # Страницы: Home, Catalog, MovieView
-│  ├─ App.vue        # Корневой компонент
-│  └─ main.js        # Точка входа
-├─ package.json      # Депенденсии и скрипты
-├─ vite.config.js    # Конфигурация Vite
-└─ README.md         # Документация
-```
-
----
-
-## ⚙️ Установка и запуск
-
-1. **Клонируйте репозиторий**:
-```
+```sh
 git clone https://github.com/GeorgeBlackbird/neurochronicles.git
 cd neurochronicles
-```
-
-2. **Установите зависимости**:
-```
-npm install
-```
-
-3. **Запуск в режиме разработки**:
-```
-npm run dev
-```
-> Открой ```http://localhost:3000``` в браузере.
-
-4. **Локальное превью продакшен-сборки**:
-```
+npm ci
 npm run dev
 ```
 
----
+Open the local address printed by Vite.
 
-## 🚀 Сборка и деплой
+To build and preview the static site:
 
-* **Сборка**:
-```
+```sh
 npm run build
+npm run preview
 ```
-После этого статические файлы появятся в папке ```dist/```.
 
-* **Деплой на GitHub Pages**:
-```
+The build output is written to `dist/`.
+
+## Source layout
+
+| Path                                                             | Purpose                                                  |
+| ---------------------------------------------------------------- | -------------------------------------------------------- |
+| [`src/views`](src/views)                                         | Home, catalogue and film pages                           |
+| [`src/components`](src/components)                               | Shared layout, timeline, film rows and media sections    |
+| [`src/assets/data/moviesData.js`](src/assets/data/moviesData.js) | Film details and model-attributed commentary             |
+| [`src/assets/data/warData.js`](src/assets/data/warData.js)       | Events and film listings grouped by year                 |
+| [`src/assets/data/movies`](src/assets/data/movies)               | References to posters, cast images, stills and video     |
+| [`src/assets/styles`](src/assets/styles)                         | SCSS for layout, pages and components                    |
+| [`src/router/index.js`](src/router/index.js)                     | Hash-based routes for the home, catalogue and film pages |
+
+The app uses Vue Router's hash history. Vite currently uses `base: './'`, so built asset references are relative. Pinia is listed as a dependency but is not registered in the app's entry point.
+
+## Publishing
+
+The repository includes a GitHub Pages deployment script:
+
+```sh
+npm run build
 npm run deploy
 ```
-> Скрипт пушит ```dist/``` в ветку ```gh-pages```.
 
----
+`npm run deploy` publishes `dist/` to the repository's `gh-pages` branch. It requires GitHub access and is separate from building or previewing the site locally.
 
-## 🔧 Конфигурация и кастомизация
+## About this version
 
-* **Базовый путь** для GitHub Pages настраивается в ```vite.config.js```:
-```
-base: '/neurochronicles/',
-```
+This repository preserves an early college project. Its structure and implementation reflect that stage of my learning.
 
-* **SCSS-переменные** (```src/assets/styles/base/_variables.scss```):
-  - Цветовая палитра
-  - Типографика
-  - Отступы и размеры
-
-* **Данные фильмов и событий**: правьте файлы в ```src/assets/data```:
-  - ```warData.js``` — массив объектов с датами, названиями и описаниями событий
-  - ```moviesData.js``` — данные каждого фильма
-
----
-
-## 🤝 Как внести вклад
-
-1. Форкните репозиторий
-2. Создайте ветку с новой фичей:
-```
-git checkout -b feature/awesome-feature
-```
-3. Внесите изменения и добавьте описательные коммиты:
-```
-git commit -m "Добавил фильтр по рейтингу"
-```
-4. Запушьте ветку и откройте PR на GitHub
-
-**Советы по PR**:
-* Следуйте стилю кода проекта
-* Опишите цель и детали изменений
-* Прикрепите скриншоты или гифки (если есть UI-изменения)
-
----
-
-## 📝 Лицензия
-
-Проект без явной лицензии. Свяжитесь с автором для обсуждения условий использования.
-
----
-
-## 📬 Контакты
-
-* **Автор**: Георгий Дроздов
-* **GitHub**: https://github.com/GeorgeBlackbird
-* **E-mail**: drozdov.jorj@yandex.ru
-
----
-
-> Спасибо за интерес к проекту! Приятного исследования советского кино в новом AI-исполнении! 🚀🙏
+There is no configured automated test suite or typecheck command. ESLint and Prettier are listed as development dependencies, but the repository does not include a lint configuration. Building the site does not establish that all interactions, media or layouts work across browsers.
